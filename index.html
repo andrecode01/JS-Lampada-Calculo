@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+	<meta charset="UTF-8">
+  	<meta name="description" content="">
+  	<meta name="keywords" content="">
+  	<meta name="author" content="">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Aprendendo JavaScript</title>
+
+	<style>
+		
+		#bodyApagado{
+			text-align: center; background: rgba(20,20,20); color: white;
+		}
+		#bodyAceso{
+			text-align: center; background: rgba(255,255,255); color: black;
+		}
+
+	</style>
+
+</head>
+
+<body id="bodyApagado">
+
+	<script>
+
+		function trocarimagem(){
+
+			var tagImg = document.getElementById("imgLampada");
+			var body = document.getElementById("bodyApagado");
+			var body2 = document.getElementById("bodyAceso");
+			
+
+
+
+			if (tagImg.src.match("bulboff")){
+
+				tagImg.src="https://www.w3schools.com/js/pic_bulbon.gif";
+				body.id="bodyAceso";
+
+
+			} else {
+
+				tagImg.src="https://www.w3schools.com/js/pic_bulboff.gif";
+				body2.id="bodyApagado";
+			}
+
+		}
+
+
+		function Soma(){
+
+			var e1 = parseFloat(document.getElementById("v1").value);
+			var e2 = parseFloat(document.getElementById("v2").value);
+
+			document.getElementById("ress").innerHTML = "Resposta Soma: <em>"+(e1+e2)+"</em>";
+			document.getElementById("resm").innerHTML = "Resposta Média: <em>"+((e1+e2)/2)+"</em>";
+
+		}
+
+
+		
+	</script>
+
+
+	<p>
+		<img id="imgLampada" onclick="trocarimagem()" src="https://www.w3schools.com/js/pic_bulboff.gif" width="100" height="180">
+	</p>
+
+	<p>Clica na lâmpada para acende-la ou apaga-la!</p>
+
+	<input type="text" id="v1"><br>
+	<input type="text" id="v2">
+
+	<p id="ress"> Resposta Soma: </p>
+	<p id="resm"> Resposta Média: </p>
+
+	<button type="button" onclick="Soma()">Calcular</button>
+
+</body>
+</html>
